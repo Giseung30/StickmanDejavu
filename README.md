@@ -72,5 +72,19 @@
 + 모든 UI 요소와 함께 **해상도 대응**이 일어난다.
 
 ### 무기 구현
-> 크게 공격 판정, 공격 효과, 강화로 나눌 수 있다.
+> 크게 이펙트, 공격 판정, 강화로 나눌 수 있다.
 
+👉🏻 이펙트
+<div align="center">
+  <img width="50%" height="50%" src="https://user-images.githubusercontent.com/60832219/213341675-ffb68d00-9567-4e56-b1b2-5655f5dd68c0.gif"/>
+  <img width="55%" height="55%" src="https://user-images.githubusercontent.com/60832219/213341684-0e9868a9-0fa8-4da9-94e3-c49698d4892a.gif"/>
+  <img width="65%" height="65%" src="https://user-images.githubusercontent.com/60832219/213341685-3d38d7f6-b35f-42ac-84ca-5e9394ec13a3.gif"/>
+  <img width="75%" height="75%" src="https://user-images.githubusercontent.com/60832219/213342931-a3fdad6e-e243-4fb8-b243-eb7392637e76.gif"/>
+</div>
+
++ 대부분의 무기 이펙트는 **Particle System**을 활용하여 제작했다.
++ 포토샵으로 편집한 여러장의 이미지를 한 장의 **Sprite Sheet**로 생성하여, Particle System의 **Texture Sheet Animation**에서 사용할 수 있도록 했다.
++ 각 이펙트는 무기 모션의 **키 프레임 함수**에서 실행된다.
++ Sprite Packer로 **드로우콜 최적화**를 적용했다.
+
+👉🏻 공격 판정
