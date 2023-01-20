@@ -61,7 +61,7 @@
 
 ### 조이스틱 구현
 > 스틱맨을 조작하기 위한 조이스틱 기능이다.
-<div align="center">
+<div align="left">
   <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213256126-ed85cae0-7240-44f8-8912-6414b19a9230.png"/>
   <img width="60%" height="60%" src="https://user-images.githubusercontent.com/60832219/213256114-e411e547-787d-4ca4-80bd-f7e34a6d54ab.png"/>
 </div>
@@ -91,11 +91,13 @@
 
 + 공격 판정 생성은 무기 모션의 **키 프레임 함수**에서 실행된다.
 + 공격 판정은 물리 충돌이 발생하는 **FixedUpdate**문 실행 전까지 활성화된 후, 비활성화된다.
++ 적 충돌이 발생하면 적 부모 클래스의 **GetDamage** 함수를 실행한다.
 + **피해량, 이동 속도 감소량, 타격 시 효과음, 궁극기 증가 여부** 등을 설정할 수 있다.
 + 주요 스크립트는 `PlayerAttackBoundManager.cs`이다.
 
 #### 👉🏻 강화
-<div align="center">
+<div align="left">
+  <img width="75%" height="75%" src="https://user-images.githubusercontent.com/60832219/213690253-971d28d4-ff53-44b7-a35c-290f06250c8d.png"/>
   <table border="0">
     <tr>
       <td align="center">
@@ -110,7 +112,7 @@
         Sniper 기본 공격 : 강화 0
       </td>
       <td align="center">
-        Gun 기본 공격 : 강화 12
+        Sniper 기본 공격 : 강화 12
       </td>
     </tr>
     <tr>
@@ -123,11 +125,137 @@
     </tr>
     <tr>
       <td align="center">
-        Gun 궁극기 : 강화 0
+        Sniper 궁극기 : 강화 0
       </td>
       <td align="center">
-        Gun 궁극기 : 강화 12
+        Sniper 궁극기 : 강화 12
       </td>
     </tr>
   </table>
 </div>
+
++ 강화는 각 공격당 **12번**까지 가능하고, 강화 단계가 올라갈수록 **강화 비용이 증가**한다.
++ 일반적으로 **공격력**이 증가하고, 세 번째 강화 단계에서는 **공격 속도** 및 **궁극기 충전량**이 증가한다.
++ 예외로 **Wizard** 무기는 강화 세 번째 강화 단계마다 이동 속도 감소량이 증가한다.
++ `Definition.cs`에서 정의한 강화 수치 증가량을 `Player.cs`에서 초기 적용하는 방식으로 구성했다.
+
+### 능력치 구현
+<img width="75%" height="75%" src="https://user-images.githubusercontent.com/60832219/213694658-db5e1d3f-37ae-4990-b117-7d61b35ba314.png"/>
+
++ **능력치 종류**
+```
+  최대 체력> 최대 체력이 증가한다.
+  체력 회복률> 시간에 따라 회복하는 체력량이 증가한다.
+  방어력> 각 무기당 피해를 입었을 때 감소하는 피해량이 증가한다.
+  이동 속도> 각 무기당 이동 속도가 증가한다.
+  다이아 획득량> 적을 처치했을 때 얻는 다이아량이 증가한다.
+  다이아 획득 확률> 적을 처치했을 때 다이아를 얻을 확률이 증가한다.
+  치명타 피해량> 적을 공격했을 때 치명타 피해량이 증가한다.
+  치명타 확률> 적을 공격했을 때 치명타를 입힐 확률이 증가한다.
+```
++ 강화는 각 능력당 **30번**까지 가능하고, 강화 단계가 올라갈수록 **강화 비용이 증가**한다.
++ 게임의 난이도가 급격히 쉬워지지 않도록 덧셈 연산을 사용했다.
++ `Definition.cs`에 정의한 강화 수치가 적용된 능력치를 `Player.cs`내의 프로퍼티로써 사용할 수 있다.
+
+### 무기 교체 구현
+> 두 개의 무기를 자유자재로 교체할 수 있게끔 UI를 구현했다.
+<div align="left">
+<img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213700923-76ca5e6c-a943-4858-a5cf-a27edf409fa7.gif"/>
+<img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213702506-1e14e4fb-bdf2-460b-8182-34969a0435d8.gif"/>
+</div>
+
++ 초기에 선택한 두 개의 **무기 아이콘**을 지정한다.
++ 버튼을 클릭하면 **애니메이션**이 실행되고, 두 아이콘의 **레이어 순서**를 변경한다.
++ 애니메이션이 종료되면, 최종적으로 무기 교체가 일어난다.
++ 무기 교체 도중에 공격할 수 없다.
++ 만약, 버튼에 의해 적이 가려지면 **불투명도**를 낮춘다.
++ 주요 스크립트는 `WeaponSwitchingButton.cs`이다.
+
+### 적 구현
+> 종류에 따라 다양한 특성을 가진다.
+<div align="center">
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706409-7a82567c-6eed-4d21-b7f6-67035e8a59c7.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706411-5c854ade-a40e-46a5-b640-93e8162da7fd.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706412-8f61e98f-75de-4c06-81fa-bbad3e9b02bb.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706039-289ed2b0-201d-446d-bb5d-3ee53cb2f943.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706041-2f005b7d-54d9-46c5-8c51-dbe3e5afcc6e.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706049-ae327809-3212-4cc1-a749-15787111ae10.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706051-5b56f126-2b7a-4426-bde7-b702a4cea360.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706053-d97485fd-1ad8-434f-926a-d2ac2f485f90.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706055-e1a1cef3-f254-42ad-af56-5c3dd7e72380.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706058-38aa8dde-e59b-48fc-bcab-7b509b590087.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706060-39163938-ed20-4f16-a399-2c180d1a510d.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706062-3e802d7a-c829-41b1-802b-07fa9a9debd3.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706067-e2d88b94-319a-4f28-9374-e90669fad644.png"/>
+  <img width="13%" height="13%" src="https://user-images.githubusercontent.com/60832219/213706071-0069ab30-35d2-452f-8e87-c75f41f66f03.png"/>
+</div>
+
+#### 👉🏻 공통
++ 능력치는 **체력, 이동 속도, 공격력, 공격 범위, 슬로우량** 등이 있다.
++ 애니메이션은 **정지, 공격, 피해, 이동, 죽음**이 있다.
++ **무기를 들고 있는 적**은 무기에 따라 근거리 또는 원거리로 구분된다.
++ 근접 무기는 오른쪽으로 갈수록 **공격력**과 **공격 범위**가 커진다.
++ 스틱맨의 **공격 판정**과 동일한 방식을 사용한다.
++ 적마다 스틱맨을 **탐색**하는 속도가 다르다.
++ 피해를 입으면 **Sprite**의 색상이 붉어졌다가 점차 돌아온다.
++ 부모 클래스는 `Enemy.cs`이다.
++ **Sprite Packer**로 드로우콜을 최적화하였다.
+
+#### 💀 Slime
+<img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213721173-e28791ec-57ed-4425-8669-e405dba2405e.gif"/>
+
++ 전체적으로 **가장 약한** 능력치를 지닌다.
++ 이동하면서 내려찍을 때 공격 판정을 발생한다.
+
+#### 💀 Rat, Spider, Worm
+<div align="left">
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213724118-5b2620a0-4195-406c-8c28-30cf2064dced.gif"/>
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213724127-143a8f01-7e6b-4bc3-9e52-9117fe968d94.gif"/>
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213724130-b07a0f6d-aae5-47b4-abce-21c80149bc0a.gif"/>
+</div>
+
++ 걸어다니는 적으로 오른쪽으로 갈수록 **높은 체력**과 **강한 공격력**이 특징이다.
++ Worm은 스틱맨을 탐색하는 시간이 없다.
+
+#### 💀 Crow, Bat, Beholder
+<div align="left">
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213726192-231a133d-3f26-408f-b6fc-9c7d735c1383.gif"/>
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213726200-647a67d4-2cb1-411a-9042-6381df05bd57.gif"/>
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213726207-ea191578-231c-43f1-ad68-ef28186cddb8.gif"/>
+</div>
+
++ 날아다니는 적으로 오른쪽으로 갈수록 **높은 이동 속도**와 **넓은 공격 판정**이 특징이다.
++ Beholder는 원거리 공격이다.
+
+#### 💀 Orc
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213727859-d023bbf1-7798-4d32-aff9-94c23ba311c9.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213727866-f6130441-ccd0-4527-800f-aa100b89cd88.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213727873-c61344dd-0155-4242-819b-529b51ef519d.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213727875-a42b30c4-6b0b-4324-970e-73d55d2a0743.gif"/>
+</div>
+
++ 별다른 특징은 없다.
+
+#### 💀 Cyclope
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213730675-e2be0661-8f65-4f9d-a464-fb379993c9af.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213730683-622558ae-a311-43e7-afb6-af0ce5ffb724.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213730686-b8e4e083-7db3-42c2-9333-53f9b45583e1.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213730696-efc7979f-2178-415c-a553-e07e3d9e82ae.gif"/>
+</div>
+
++ 이동 속도가 매우 느리지만, **매우 높은 체력**과 **넓은 공격 판정**을 지닌다.
+
+#### 💀 Demon
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213732883-6e5bcf1a-4136-411e-9607-374771f9fd2e.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213732888-8fc2cf15-9a0e-4863-b189-9191a498021c.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213732894-797427af-a27d-45c0-9adb-8885c11a2baa.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213732899-aa955f01-9d5e-490a-9cac-22757b71b8c1.gif"/>
+</div>
+
++ 피해 애니메이션이 없어서 **경직**을 받지 않는다.
+
+#### 👉🏻 티어
++ **체력바 색상**에 따라 티어를 구분할 수 있다.
