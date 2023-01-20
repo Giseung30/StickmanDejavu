@@ -202,7 +202,9 @@
 + **Sprite Packer**로 드로우콜을 최적화하였다.
 
 #### 💀 Slime
-<img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213721173-e28791ec-57ed-4425-8669-e405dba2405e.gif"/>
+<div align="left">
+  <img width="30%" height="30%" src="https://user-images.githubusercontent.com/60832219/213721173-e28791ec-57ed-4425-8669-e405dba2405e.gif"/>
+</div>
 
 + 전체적으로 **가장 약한** 능력치를 지닌다.
 + 이동하면서 내려찍을 때 공격 판정을 발생한다.
@@ -225,7 +227,7 @@
 </div>
 
 + 날아다니는 적으로 오른쪽으로 갈수록 **높은 이동 속도**와 **넓은 공격 판정**이 특징이다.
-+ Beholder는 원거리 공격이다.
++ Beholder는 원거리다.
 
 #### 💀 Orc
 <div align="left">
@@ -257,5 +259,86 @@
 
 + 피해 애니메이션이 없어서 **경직**을 받지 않는다.
 
+#### 💀 Goblin
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213791763-0ca3d727-cc3f-4f76-94bf-f38d5eb39a2f.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213791771-8baf06ef-88a6-4855-b7ec-fbc0cd424aa3.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213791773-8910d993-1316-4113-aea2-5c98a23466df.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213791775-de0f5a66-2aaa-4d25-b791-334607ee403b.gif"/>
+</div>
+
++ **빠른 이동 속도**를 지닌다.
+
+#### 💀 Zombie
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213793581-9d35dcbf-dc01-41a2-8260-b1814b38a2df.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213793586-e8822608-b8eb-4054-8461-4d488498e8e4.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213793589-958cc407-59c6-4ac1-b9ec-076b350e1411.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213793593-42d7402d-f23a-4af2-a5ec-a93c69eed88a.gif"/>
+</div>
+
++ 이동 중, 체력을 점차 **회복**한다.
+
+#### 💀 Ghost
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213795373-2d531cf1-6c92-4ff5-ad95-0a331c5e5f48.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213795394-ffed5dbf-8b51-4181-87d9-06bf959d9e47.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213795405-8a9cb243-80ee-4350-b195-34336deb9bff.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213795416-2bc1b101-0e7c-4dcf-96af-3ab0d3bb537c.gif"/>
+</div>
+
++ **원거리 공격에 면역**이 된다.
+
+#### 💀 Skeleton
+<div align="left">
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213797195-f3b526e7-2a68-47d4-aa52-bc6e753f33e5.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213797209-b43c6963-065a-437c-9020-a7109c0f0d9b.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213797215-8f7abf10-d518-47e1-937f-57fe57b47a46.gif"/>
+  <img width="23%" height="23%" src="https://user-images.githubusercontent.com/60832219/213797229-5f7eedaf-134d-4731-b396-4dc8badb9bb9.gif"/>
+</div>
+
++ 죽고 나면 일정 시간 후 **부활**한다.
++ 부활 후에는 **능력치가 대폭 상승**하고, 일정 시간이 지나야만 다시 죽는다.
+
 #### 👉🏻 티어
-+ **체력바 색상**에 따라 티어를 구분할 수 있다.
+<div align="left">
+  <table border="0">
+    <tr>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213798574-af9996d1-d306-4531-82f5-99b38be2efe9.gif"/>
+      </td>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213798580-fdaaaec0-da02-4892-97a2-41cced32b84f.gif"/>
+      </td>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213798583-8d6baf20-c42d-42b4-9675-290c345df54b.gif"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        티어 1
+      </td>
+      <td align="center">
+        티어 2
+      </td>
+      <td align="center">
+        티어 3
+      </td>
+    </tr>
+  </table>
+</div>
+  
++ **체력바 색상**에 따라 티어를 3단계로 구분한다.
++ 티어가 상승함에 따라 모든 **능력치**가 큰 폭으로 상승한다.
+
+### 스테이지 정의
+<div align="left">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213801138-a1baf807-dec7-4ba1-ad74-b19edeb79c60.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213801140-089bad90-4823-46d7-ac56-8eb06235008c.png"/>
+</div>
+
++ **Assets/Resources/Stage** 디렉터리에 각 스테이지 정보를 저장한다.
++ 파일에는 **동시 생성 수, 생성 지연 시간, 생성하는 적 순서**가 정의되어있다.
++ 게임을 시작하면, 파일 입출력을 통해 생성하는 적 순서를 **큐**에 삽입한다.
++ 주요 스크립트는 `EnemySpawnManager.cs`이다.
++ 모든 적이 생성되어 사라지면 스테이지를 종료한다.
