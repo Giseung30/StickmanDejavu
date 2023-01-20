@@ -74,13 +74,11 @@
 ### 무기 구현
 > 크게 이펙트, 공격 판정, 강화로 나눌 수 있다.
 
-👉🏻 이펙트
-<div align="center">
-  <img width="50%" height="50%" src="https://user-images.githubusercontent.com/60832219/213341675-ffb68d00-9567-4e56-b1b2-5655f5dd68c0.gif"/>
-  <img width="55%" height="55%" src="https://user-images.githubusercontent.com/60832219/213341684-0e9868a9-0fa8-4da9-94e3-c49698d4892a.gif"/>
-  <img width="65%" height="65%" src="https://user-images.githubusercontent.com/60832219/213341685-3d38d7f6-b35f-42ac-84ca-5e9394ec13a3.gif"/>
-  <img width="75%" height="75%" src="https://user-images.githubusercontent.com/60832219/213342931-a3fdad6e-e243-4fb8-b243-eb7392637e76.gif"/>
-</div>
+#### 👉🏻 이펙트
+<img width="50%" height="50%" src="https://user-images.githubusercontent.com/60832219/213341675-ffb68d00-9567-4e56-b1b2-5655f5dd68c0.gif"/>
+<img width="55%" height="55%" src="https://user-images.githubusercontent.com/60832219/213341684-0e9868a9-0fa8-4da9-94e3-c49698d4892a.gif"/>
+<img width="65%" height="65%" src="https://user-images.githubusercontent.com/60832219/213341685-3d38d7f6-b35f-42ac-84ca-5e9394ec13a3.gif"/>
+<img width="75%" height="75%" src="https://user-images.githubusercontent.com/60832219/213342931-a3fdad6e-e243-4fb8-b243-eb7392637e76.gif"/>
 
 + 대부분의 무기 이펙트는 **Particle System**을 활용하여 제작했다.
 + 포토샵으로 편집한 여러장의 이미지를 한 장의 **Sprite Sheet**로 생성하여 입자를 구현했다.
@@ -88,4 +86,48 @@
 + 각 이펙트는 무기 모션의 **키 프레임 함수**에서 실행된다.
 + Sprite Packer로 **드로우콜 최적화**를 적용했다.
 
-👉🏻 공격 판정
+#### 👉🏻 공격 판정
+<img width="25%" height="25%" src="https://user-images.githubusercontent.com/60832219/213673140-ccd22ba7-fe65-4bee-aa98-782a2f571bb7.gif"/>
+
++ 공격 판정 생성은 무기 모션의 **키 프레임 함수**에서 실행된다.
++ 공격 판정은 물리 충돌이 발생하는 **FixedUpdate**문 실행 전까지 활성화된 후, 비활성화된다.
++ **피해량, 이동 속도 감소량, 타격 시 효과음, 궁극기 증가 여부** 등을 설정할 수 있다.
++ 주요 스크립트는 `PlayerAttackBoundManager.cs`이다.
+
+#### 👉🏻 강화
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213688519-16b06696-7808-4d0b-be74-b100ba7baace.gif"/>
+      </td>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213688527-950fe434-a9e1-47f5-8257-8a0cfe7317b7.gif"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        Sniper 기본 공격 : 강화 0
+      </td>
+      <td align="center">
+        Gun 기본 공격 : 강화 12
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213688524-42c89a9d-5ff9-46f8-8991-10ffe11f323e.gif"/>
+      </td>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213688528-c79d827f-f532-4f7a-82c0-61cb5d991513.gif"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        Gun 궁극기 : 강화 0
+      </td>
+      <td align="center">
+        Gun 궁극기 : 강화 12
+      </td>
+    </tr>
+  </table>
+</div>
