@@ -35,7 +35,7 @@
 + 현재까지의 진행 사항을 **저장**하는 기능을 구현한다.
 + **업적** 기능을 구현한다.
 
-## 📋 개발 과정
+## 📋 주요 개발 과정
 ### 로그인 기능 구현
 > 각 사용자의 정보를 불러오기 위한 로그인 기능이다.
 <img width="50%" height="50%" src="https://user-images.githubusercontent.com/60832219/213242685-51c07a74-acf8-4ba5-bf2b-8aa86f20a30f.png"/>
@@ -383,3 +383,57 @@
   + https://giseung.tistory.com/39
   
 ### 일시정지 기능 구현
+<div align="left">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213929365-b7330ecd-dccb-4166-bc69-67c3ec7a4fc2.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213929367-52233368-4f52-4517-838e-e6d34eb2dddf.png"/>
+</div>
+
++ 일시정지 버튼을 클릭하면, **Time.timeScale** 값을 0으로 지정한다.
++ 위와 같은 과정을 거치면 시간에 영향을 받는 모든 게임 오브젝트가 멈추게 된다.
++ 일시정지와 동시에 배경 Sprite의 **레이어 순서를 최상위**로 변경하여, 모든 Sprite가 가려지도록 했다.
++ 주요 스크립트는 `CanvasManager.cs`이다.
+
+### 인앱결제(IAP) 구현
+<div align="left">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213930094-ca014b54-ef21-4376-9e4e-249b90b385fd.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213930096-5a4b0eb3-09a5-433a-a5c0-b30fefe7fbfe.png"/>
+</div>
+
++ 상점에서 게임 내 화폐를 추가 구입할 수 있도록 **인앱결제** 시스템을 구현했다.
++ 로그인을 했을 경우에만 결제가 가능하도록 했다.
++ 주요 스크립트는 `IAPManager.cs`이다.
++ 인앱결제를 구현하는 과정은 본 게시글에 정리했다.
+  + https://giseung.tistory.com/38
+
+### DB 통신 구현
+<div align="left">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213931404-1f548b31-c830-4df9-91c2-792c194a227c.PNG"/>
+</div>
+
++ **서버 호스팅**을 통해 데이터베이스를 구축했다.
++ 서버사이드 언어인 **PHP**를 사용하여 클라이언트와의 통신을 구현했다.
++ 데이터베이스의 여러 컬럼을 불러오는 경우에는 **Json** 파싱을 활용했다.
++ 네트워크 미연결 시 **예외 처리**했다.
++ 주요 통신 정보는 다음과 같다.
+  + `저장`: 메인 화면에서 불러오기 버튼을 클릭하면 사용자의 저장 정보를 불러오고, 저장 버튼을 클릭하거나 스테이지를 클리어하면 저장이 된다.
+  + `스테이지 결과`: 스테이지가 종료되면 각 사용자의 결과 정보를 저장한다.
+  + `업적`: 로그인을 하면 사용자의 업적 정보를 불러오고, 업적을 달성하면 자동으로 저장된다.
+  + `화폐 구매 내역`: 사용자가 화폐를 구매하면 결제 내역을 저장한다.
+
+## 📽 GIF
+<div align="left">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938845-51c01533-7f52-440d-a5f8-a546975fb11f.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938846-0222eb6e-2048-463b-b6c5-213faacabb8c.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938847-9059f0a6-1d69-4585-8fe5-b593c99e6bd6.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938850-80afc451-c7be-4147-81d0-93427937ff95.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938855-185a5739-3dc6-4287-9712-9f35519aa510.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938858-a390bcf7-feab-4ca3-9abf-292d7328add1.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938859-ec4b281c-e6e3-4def-bebc-b0d00cc20e7d.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938862-e59f342b-97d0-430a-afbc-306506722f64.gif"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938863-59ee96c2-d6e0-4468-b040-146d518abf85.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938864-9ff05d5b-fde3-4fb5-a424-b017c8c0358b.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938866-490f2eec-7658-4654-bcb3-f9e178e71c6d.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938867-b572cf06-a106-43d8-9b9a-06c24cce2ff3.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938868-e9289bf9-50ab-4367-862b-8b600e3862a5.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938869-a394012b-1081-4bdc-9790-db5f3751335a.png"/>
+</div>
