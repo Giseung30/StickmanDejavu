@@ -421,7 +421,7 @@
   + `화폐 구매 내역`: 사용자가 화폐를 구매하면 결제 내역을 저장한다.
 
 ## 📽 GIF
-<div align="left">
+<div align="center">
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938845-51c01533-7f52-440d-a5f8-a546975fb11f.gif"/>
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938846-0222eb6e-2048-463b-b6c5-213faacabb8c.gif"/>
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938847-9059f0a6-1d69-4585-8fe5-b593c99e6bd6.gif"/>
