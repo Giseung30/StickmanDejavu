@@ -344,3 +344,35 @@
 + 게임을 시작하면, 파일 입출력을 통해 생성하는 적 순서를 **큐**에 삽입한다.
 + 주요 스크립트는 `EnemySpawnManager.cs`이다.
 + 모든 적이 생성되어 사라지면 스테이지를 종료한다.
+
+### 애드몹 추가
+<div align="left">
+  <table border="0">
+    <tr>
+      <td colspan="2" align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213897970-7fecadb3-5361-4909-808d-ad6b64170707.png"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        광고 화면
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213897969-f434d188-71aa-4469-8f14-300ba235e241.png"/>
+      </td>
+      <td align="center">
+        <img width="100%" height="100%" src="https://user-images.githubusercontent.com/60832219/213897971-022e6afe-1dc2-409b-8e5e-da9e62db5d82.png"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        광고 시청 전 결과 화면
+      </td>
+      <td align="center">
+        광고 시청 후 결과 화면
+      </td>
+    </tr>
+  </table>
+</div>
