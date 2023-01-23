@@ -1,5 +1,7 @@
 # 스틱맨 데자뷰
-// 동영상 링크
+<div align="center">
+  <img width="50%" height="50%" src="https://user-images.githubusercontent.com/60832219/214057297-5ed461f1-f8ca-4d51-92c9-da4c5bff01fd.png"/>
+</div>
 
 ## 🔗 링크
 + https://play.google.com/store/apps/details?id=com.coust.stickmandejavu
@@ -417,8 +419,16 @@
 + 주요 통신 정보는 다음과 같다.
   + `저장`: 메인 화면에서 불러오기 버튼을 클릭하면 사용자의 저장 정보를 불러오고, 저장 버튼을 클릭하거나 스테이지를 클리어하면 저장이 된다.
   + `스테이지 결과`: 스테이지가 종료되면 각 사용자의 결과 정보를 저장한다.
-  + `업적`: 로그인을 하면 사용자의 업적 정보를 불러오고, 업적을 달성하면 자동으로 저장된다.
   + `화폐 구매 내역`: 사용자가 화폐를 구매하면 결제 내역을 저장한다.
+  + `업적`: 로그인을 하면 사용자의 업적 정보를 불러오고, 업적을 달성하면 자동으로 저장된다.
+<div align="center">
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060337-4d8d0ea2-9d47-40bb-99b7-197df32201c3.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060344-8656b1cf-1940-4faa-ac4b-c64689940e33.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060348-0ba74968-b28a-4697-9cff-2b334cd69986.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060352-c580eae2-67f8-4018-ac1b-60edbb5e7b9b.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060357-386bd93c-607a-4e8d-9b7a-6fc9a05e4693.png"/>
+  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/214060364-d9be3c56-c789-488c-ace0-936289a0f3cd.png"/>
+</div>
 
 ## 📽 GIF
 <div align="center">
@@ -430,10 +440,6 @@
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938858-a390bcf7-feab-4ca3-9abf-292d7328add1.gif"/>
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938859-ec4b281c-e6e3-4def-bebc-b0d00cc20e7d.gif"/>
   <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938862-e59f342b-97d0-430a-afbc-306506722f64.gif"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938863-59ee96c2-d6e0-4468-b040-146d518abf85.png"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938864-9ff05d5b-fde3-4fb5-a424-b017c8c0358b.png"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938866-490f2eec-7658-4654-bcb3-f9e178e71c6d.png"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938867-b572cf06-a106-43d8-9b9a-06c24cce2ff3.png"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938868-e9289bf9-50ab-4367-862b-8b600e3862a5.png"/>
-  <img width="45%" height="45%" src="https://user-images.githubusercontent.com/60832219/213938869-a394012b-1081-4bdc-9790-db5f3751335a.png"/>
 </div>
+
+## ✔ 후기
